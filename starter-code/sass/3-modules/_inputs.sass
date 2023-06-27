@@ -1,0 +1,63 @@
+@use '../1-base/variables'
+
+.checkbox-group
+
+    input[type=checkbox]
+        -webkit-appearance: none
+        width: 32px
+        height: 32px
+        margin-right: 18px
+
+    // TODO: Consertar o checkbox 
+
+    label
+        position: relative
+        width: 31px
+        height: 31px
+
+        &::before, &::after
+            content: ""
+            position: absolute
+            width: 31px
+            height: 31px
+            left: -31px
+            border: 1px solid variables.$borders
+            top: 0px
+            border-radius: 50%
+            transition: 0.1s
+
+    input[type=checkbox]:checked + label::before
+        width: 31px
+        height: 31px
+        background-color: variables.$borders
+
+    input[type=checkbox]:checked + label::after
+        width: 15px
+        height: 15px
+        background-color: variables.$blue
+        left: -23px
+        top: 8px
+
+input[type=number]
+    padding: 20px 24px
+    border-radius: 12px
+    border: 1px solid #D8E2E7
+    color: variables.$gunmetal
+    font-size: 24px
+    font-weight: 600
+
+    &::-webkit-outer-spin-button
+        -webkit-appearance: none
+    &::-webkit-inner-spin-button
+        -webkit-appearance: none
+
+    &:active, &:focus-visible, &:focus
+        outline: none !important
+        border: 1px solid variables.$blue
+
+span
+    position: relative
+    left: -64px
+    font-size: 24px
+    color: variables.$blue
+    font-weight: 600

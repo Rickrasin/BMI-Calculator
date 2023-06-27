@@ -1,0 +1,63 @@
+@use '../1-base/variables'
+@use 'layouts-mixins'
+
+.main-container
+    margin-top: 266px
+
+    .rectangle
+        position: absolute
+        width: 978px
+        height: 737px
+        left: 24px
+        top: -1px
+        background: linear-gradient(290.1deg, #D6E6FE 0%, rgba(214, 252, 254, 0) 100%)
+        border-radius: 0px 0px 35px 35px
+        z-index: -10
+
+    &-content
+        @include layouts-mixins.center-content
+
+        .logo
+            position: absolute
+            top: 0
+            margin-top: 75px
+
+        &-left
+            margin-right: 32px
+
+            h1
+                font-size: variables.$heading-XL
+                font-weight: 600
+                line-height: 110%
+                margin-bottom: 35px
+
+            p
+                font-size: variables.$body-M
+                font-weight: 400
+                line-height: 150%
+
+        &-right
+            .container
+
+                display: flex
+                flex-direction: column
+                align-items: flex-start
+                padding: 32px
+                gap: 32px
+
+                width: 564px
+                background-color: #fff
+                box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25)
+                border-radius: 16px
+
+            h3
+                color: variables.$gunmetal
+
+            form
+                display: flex
+                flex-direction: column
+                gap: 32px
+
+                .checkbox-container
+                    display: grid
+                    grid-template-columns: 1fr 1fr
