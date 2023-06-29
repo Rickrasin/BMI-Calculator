@@ -16,6 +16,9 @@
 
     &-content
         @include layouts-mixins.center-content
+        display: grid
+        grid-template-columns: 1fr 1fr
+        gap: 32px
 
         .logo
             position: absolute
@@ -23,13 +26,18 @@
             margin-top: 75px
 
         &-left
-            margin-right: 32px
+            padding-right: 88px
+            display: flex
+            flex-direction: column
+            justify-content: center
 
             h1
                 font-size: variables.$heading-XL
-                font-weight: 600
+                font-weight: 800
+                font-style: italic
                 line-height: 110%
                 margin-bottom: 35px
+                letter-spacing: -3.2px
 
             p
                 font-size: variables.$body-M
@@ -57,7 +65,65 @@
                 display: flex
                 flex-direction: column
                 gap: 32px
+                width: 100%
 
                 .checkbox-container
                     display: grid
                     grid-template-columns: 1fr 1fr
+                    gap: 24px
+
+                .input-container
+                    display: grid
+                    grid-template-columns: 1fr 1fr
+                    gap: 8px 24px
+
+                    label
+                        color: variables.$dark-eletric-blue
+                        font-size: variables.$body-M
+                        line-height: 150%
+
+            .result
+                display: flex
+                padding: 32px
+                justify-content: center
+                align-items: center
+                gap: 24px
+                background-color: variables.$blue
+                border-radius: 80px 999px 999px 80px
+                background: linear-gradient(90deg, #345FF6 0%, #587DFF 100%)
+
+                &-content
+                    display: grid
+                    grid-template-columns: 1fr 1fr
+                    gap: 24px
+
+                    &-left
+                        display: flex
+                        flex-direction: column
+                        justify-content: center
+                        align-items: flex-start
+                        gap: 8px
+                        flex: 1 0 0
+
+                h2
+                    color: #fff
+                    font-size: variables.$body-M
+                    font-style: normal
+                    font-weight: 600
+                    line-height: 150%
+
+                h1
+                    color: #fff
+                    font-size: variables.$heading-XL
+                    font-style: italic
+                    font-weight: 800
+                    line-height: 110%
+                    letter-spacing: -3.2px
+
+            p
+                color: #fff
+                font-size: variables.$body-M
+                font-weight: 400
+                line-height: 150%
+                span
+                    font-weight: 700

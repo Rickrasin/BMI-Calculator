@@ -45,52 +45,56 @@
             <form class="bmi-form">
               <div class="checkbox-container">
                 <div class="checkbox-group">
-                  <input type="checkbox" name="Metric" id="checkbox-metric" />
-                  <label for="checkbox-metric"></label>
-                  Metric
+                  <input type="checkbox" name="Metric" id="metric" />
+                  <label for="metric">Metric</label>
                 </div>
 
                 <div class="checkbox-group">
-                  <input
-                    type="checkbox"
-                    name="Imperial"
-                    id="checkbox-imperial"
-                  />
-                  <label for="checkbox-imperial"></label>
-                  Imperial
+                  <input type="checkbox" name="Imperial" id=imperial" />
+                  <label for="imperial">Imperial</label>
                 </div>
               </div>
 
               <div class="input-container">
+                <label for="height">Height</label>
+                <label for="weight">Weight</label>
                 <div class="input-group">
-                  <input
-                    type="number"
-                    name="Height"
-                    id="input-height"
-                    placeholder="0"
-                  /><span>cm</span> Height
+                  <div class="input">
+                    <input
+                      type="number"
+                      name="Height"
+                      id="height"
+                      placeholder="0"
+                    />
+                    <span>cm</span>
+                  </div>
                 </div>
                 <div class="input-group">
-                  <input
-                    type="number"
-                    name="Weight"
-                    id="input-weight"
-                    placeholder="0"
-                  /><span>kg</span> Weight
+                  <div class="input">
+                    <input
+                      type="number"
+                      name="Weight"
+                      id="weight"
+                      placeholder="0"
+                    />
+                    <span>kg</span>
+                  </div>
                 </div>
               </div>
             </form>
             <div class="result">
-              <p>Your BMI is...</p>
+              <div class="result-content">
+                <div class="result-content-left">
+                  <h2>Your BMI is...</h2>
 
-              <h1><!-- add score --></h1>
+                  <h1>23.4<!-- add score --></h1>
+                </div>
 
-              <p>
-                Your BMI suggests you're
-                <span><!-- add classification --></span>. Your ideal weight is
-                between <span><!-- add range --></span>
-              </p>
-              .
+                <p>
+                  Your BMI suggests you're a healthy weight. Your ideal weight
+                  is between <span>63.3kg - 85.2kgs<!-- add range --></span>.
+                </p>
+              </div>
             </div>
           </div>
         </div>
