@@ -17,6 +17,8 @@ h1, h2, h3 {
 p {
   font-size: 16px;
   color: #5e6e85;
+  font-weight: 400;
+  line-height: 150%;
 }
 
 .pattern-left {
@@ -289,6 +291,15 @@ p {
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
+}
+.card-content h3 {
+  color: #253347;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -1.2px;
+}
+.card-content p {
+  line-height: 150%;
 }
 
 /*# sourceMappingURL=styles.css.map */
