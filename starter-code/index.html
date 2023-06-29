@@ -25,6 +25,11 @@
     />
   </head>
   <body>
+    <img
+      src="./assets/images/pattern-curved-line-left.svg"
+      class="pattern-left"
+    />
+
     <main class="main-container">
       <div class="rectangle"></div>
       <div class="main-container-content">
@@ -101,7 +106,10 @@
       </div>
     </main>
 
-    <section class="your-result-section">
+    <section class="your-result">
+      <div class="man-eating">
+        <img src="./assets/images/image-man-eating.webp" alt="" />
+      </div>
       <div class="your-result-content">
         <h2>What your BMI result means</h2>
 
@@ -117,8 +125,14 @@
     </section>
 
     <section class="tips">
-      <div class="tips-content">
-        <div class="card-tips">
+      <div class="card" id="1">
+        <img
+          class="card-icon"
+          src="./assets/images/icon-eating.svg"
+          alt="soup"
+        />
+
+        <div class="card-content">
           <h3 class="card-title">Healthy eating</h3>
 
           <p class="card-text">
@@ -126,18 +140,32 @@
             digestion, immunity, mental clarity, and mood.
           </p>
         </div>
-        <div class="card">
+      </div>
+      <div class="card" id="2">
+        <img
+          class="card-icon"
+          src="./assets/images/icon-exercise.svg"
+          alt="Alter"
+        />
+
+        <div class="card-content">
           <h3 class="card-title">Regular exercise</h3>
           <p class="card-text">
             Exercise improves fitness, aids weight control, elevates mood, and
             reduces disease risk, fostering wellness and longevity.
           </p>
         </div>
-        <h3 class="card-title">Adequate sleep</h3>
-        <p class="card-text">
-          Sleep enhances mental clarity, emotional stability, and physical
-          wellness, promoting overall restoration and rejuvenation.
-        </p>
+      </div>
+      <div class="card" id="3">
+        <img src="./assets/images/icon-sleep.svg" alt="" />
+
+        <div class="card-content">
+          <h3 class="card-title">Adequate sleep</h3>
+          <p class="card-text">
+            Sleep enhances mental clarity, emotional stability, and physical
+            wellness, promoting overall restoration and rejuvenation.
+          </p>
+        </div>
       </div>
     </section>
 

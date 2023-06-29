@@ -19,8 +19,17 @@ p {
   color: #5e6e85;
 }
 
+.pattern-left {
+  display: block;
+  position: absolute;
+  width: 85px;
+  height: 200px;
+  left: 1188px;
+  top: 749px;
+}
+
 .main-container {
-  margin-top: 266px;
+  padding: 167px 0;
 }
 .main-container .rectangle {
   position: absolute;
@@ -148,6 +157,53 @@ p {
   font-weight: 700;
 }
 
+.your-result {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+  align-content: center;
+  gap: 131px;
+}
+.your-result .man-eating {
+  height: 533px;
+}
+.your-result .man-eating img {
+  height: 100%;
+}
+.your-result-content {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  justify-content: end;
+  align-items: flex-start;
+  padding: 40px 0;
+}
+.your-result-content h2 {
+  color: #253347;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 110%;
+  letter-spacing: -2.4px;
+}
+.your-result-content p {
+  line-height: 150%;
+}
+
+.tips {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 96px;
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+
 .checkbox-group {
   display: flex;
   align-items: center;
@@ -216,6 +272,23 @@ p {
   color: #345FF6;
   font-weight: 600;
   letter-spacing: -1.2px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 45px;
+}
+.card-icon {
+  width: 64px;
+  height: 64px;
+}
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
 }
 
 /*# sourceMappingURL=styles.css.map */
