@@ -31,7 +31,7 @@ p {
 }
 
 .main-container {
-  padding: 167px 0;
+  padding: 167px 0 86px 0;
 }
 .main-container .rectangle {
   position: absolute;
@@ -167,8 +167,9 @@ p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-content: center;
-  align-content: center;
   gap: 131px;
+  padding-top: 65px;
+  padding-bottom: 96px;
 }
 .your-result .man-eating {
   height: 533px;
@@ -200,7 +201,7 @@ p {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  padding-top: 96px;
+  padding: 72px 0 96px 0;
   display: flex;
   flex-direction: row;
   gap: 32px;
