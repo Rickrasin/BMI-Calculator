@@ -1,5 +1,5 @@
 html {
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 * {
@@ -15,7 +15,7 @@ h1, h2, h3 {
 }
 
 p {
-  font-size: 16px;
+  font-size: 1rem;
   color: #5e6e85;
   font-weight: 400;
   line-height: 150%;
@@ -29,19 +29,39 @@ p {
   left: 1188px;
   top: 749px;
 }
+@media (max-width: 968px) {
+  .pattern-left {
+    display: none;
+  }
+}
 
 .main-container {
-  padding: 167px 0 86px 0;
+  margin-top: 11.31rem;
+  margin-bottom: 4.06rem;
+}
+@media (max-width: 968px) {
+  .main-container {
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+  }
 }
 .main-container .rectangle {
   position: absolute;
-  width: 978px;
-  height: 737px;
+  width: 61rem;
+  height: 46rem;
   left: 24px;
   top: -1px;
   background: linear-gradient(290.1deg, #D6E6FE 0%, rgba(214, 252, 254, 0) 100%);
   border-radius: 0px 0px 35px 35px;
   z-index: -10;
+}
+@media (max-width: 968px) {
+  .main-container .rectangle {
+    width: 100%;
+    height: 40rem;
+    left: 0;
+    top: 0;
+  }
 }
 .main-container-content {
   max-width: 1160px;
@@ -50,29 +70,56 @@ p {
   justify-content: space-between;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 32px;
+  gap: 2rem;
+}
+@media (max-width: 968px) {
+  .main-container-content {
+    max-width: 42.8rem;
+  }
+}
+@media (max-width: 968px) {
+  .main-container-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-content: center;
+  }
 }
 .main-container-content .logo {
   position: absolute;
   top: 0;
   margin-top: 75px;
 }
+@media (max-width: 968px) {
+  .main-container-content .logo {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+  }
+}
 .main-container-content-left {
   padding-right: 88px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 1.5rem;
+}
+@media (max-width: 968px) {
+  .main-container-content-left {
+    padding-right: 0;
+    text-align: center;
+    align-items: center;
+  }
 }
 .main-container-content-left h1 {
   font-size: 64px;
   font-weight: 800;
   font-style: italic;
   line-height: 110%;
-  margin-bottom: 35px;
-  letter-spacing: -3.2px;
+  letter-spacing: -0.15rem;
 }
 .main-container-content-left p {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 150%;
 }
@@ -82,7 +129,6 @@ p {
   align-items: flex-start;
   padding: 32px;
   gap: 32px;
-  width: 564px;
   background-color: #fff;
   box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25);
   border-radius: 16px;
@@ -108,7 +154,7 @@ p {
 }
 .main-container-content-right form .input-container label {
   color: #5e6e85;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 150%;
 }
 .main-container-content-right .result {
@@ -136,7 +182,7 @@ p {
 }
 .main-container-content-right .result h2 {
   color: #fff;
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 600;
   line-height: 150%;
@@ -151,7 +197,7 @@ p {
 }
 .main-container-content-right p {
   color: #fff;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 150%;
 }
@@ -164,39 +210,59 @@ p {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  margin-top: 8.19rem;
+  margin-bottom: 6rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-content: center;
-  gap: 131px;
-  padding-top: 65px;
-  padding-bottom: 96px;
+  gap: 8.19rem;
 }
-.your-result .man-eating {
-  height: 533px;
+@media (max-width: 968px) {
+  .your-result {
+    max-width: 42.8rem;
+  }
+}
+@media (max-width: 968px) {
+  .your-result {
+    gap: 4.69rem;
+  }
 }
 .your-result .man-eating img {
-  height: 100%;
+  width: 100%;
 }
 .your-result-content {
-  display: flex;
-  flex-direction: column;
-  gap: 35px;
-  justify-content: end;
-  align-items: flex-start;
   padding: 40px 0;
 }
-.your-result-content h2 {
-  color: #253347;
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 110%;
-  letter-spacing: -2.4px;
-}
-.your-result-content p {
-  line-height: 150%;
+@media (max-width: 968px) {
+  .your-result-content {
+    text-align: start !important;
+    padding: 0;
+  }
 }
 
 .tips {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 7.5rem;
+}
+@media (max-width: 968px) {
+  .tips {
+    margin-bottom: 6rem;
+  }
+}
+.tips .rectangle {
+  position: absolute;
+  background: linear-gradient(290.1deg, #D6E6FE 0%, rgba(214, 252, 254, 0) 100%);
+  opacity: 0.25;
+  z-index: -10;
+  width: 100%;
+  height: 100%;
+  relative: 100%;
+  left: 0px;
+  top: 1424.09px;
+}
+.tips-content {
   max-width: 1160px;
   margin: 0 auto;
   display: flex;
@@ -205,6 +271,72 @@ p {
   display: flex;
   flex-direction: row;
   gap: 32px;
+}
+@media (max-width: 968px) {
+  .tips-content {
+    max-width: 42.8rem;
+  }
+}
+@media (max-width: 968px) {
+  .tips-content {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+}
+
+.bmi-limitations {
+  padding-bottom: 7.5rem;
+}
+@media (max-width: 968px) {
+  .bmi-limitations {
+    padding-bottom: 5.99rem;
+  }
+}
+.bmi-limitations-content {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  display: grid;
+  grid-template-areas: "container container container . gender gender" ". . age age muscle muscle" ". pregnancy pregnancy race race .";
+  gap: 2rem;
+}
+@media (max-width: 968px) {
+  .bmi-limitations-content {
+    max-width: 42.8rem;
+  }
+}
+@media (max-width: 968px) {
+  .bmi-limitations-content {
+    grid-template-areas: "container container container container" "gender gender age age" "muscle muscle pregnancy pregnancy" ". race race .";
+  }
+}
+.bmi-limitations-content .container {
+  padding-bottom: 3rem;
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-area: container;
+}
+@media (max-width: 968px) {
+  .bmi-limitations-content .container {
+    text-align: center;
+  }
+}
+.bmi-limitations-content #card-4 {
+  grid-area: gender;
+}
+.bmi-limitations-content #card-5 {
+  grid-area: age;
+}
+.bmi-limitations-content #card-6 {
+  grid-area: muscle;
+}
+.bmi-limitations-content #card-7 {
+  grid-area: pregnancy;
+}
+.bmi-limitations-content #card-8 {
+  grid-area: race;
 }
 
 .checkbox-group {
@@ -224,6 +356,9 @@ p {
   cursor: pointer;
   transition: all 0.3s;
 }
+.checkbox-group input[type=checkbox]:hover {
+  border: 2px solid #345FF6;
+}
 .checkbox-group input[type=checkbox]:checked {
   background-color: #d8e2e7;
 }
@@ -238,9 +373,12 @@ p {
   position: relative;
   background-color: #345FF6;
 }
+.checkbox-group input[type=checkbox]:checked:before:hover {
+  border: transparent;
+}
 .checkbox-group label {
   color: #253347;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   line-height: 150%;
 }
@@ -251,6 +389,11 @@ p {
   border: 1px solid #D8E2E7;
   padding: 24px 20px;
   border-radius: 12px;
+  transition: all 0.2s;
+}
+.input:hover {
+  border: 1px solid #345FF6;
+  cursor: pointer;
 }
 .input input[type=number] {
   color: #253347;
@@ -283,6 +426,13 @@ p {
   align-items: flex-start;
   gap: 45px;
 }
+@media (max-width: 968px) {
+  .card {
+    flex-direction: row;
+    gap: 2.5rem;
+    align-items: center;
+  }
+}
 .card-icon {
   width: 64px;
   height: 64px;
@@ -299,8 +449,57 @@ p {
   font-weight: 600;
   letter-spacing: -1.2px;
 }
-.card-content p {
-  line-height: 150%;
+.card-secondary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 32px;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 16px;
+  box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+}
+.card-secondary-top {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.card-secondary-top img {
+  width: 2rem;
+  height: 2rem;
+}
+.card-secondary-top h3 {
+  color: #253347;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -1.2px;
+}
+
+.article-content {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  justify-content: end;
+  align-items: flex-start;
+}
+@media (max-width: 968px) {
+  .article-content {
+    gap: 2rem;
+    text-align: center;
+    align-items: center;
+  }
+}
+.article-content h2 {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 110%;
+  letter-spacing: -2.4px;
+}
+@media (max-width: 968px) {
+  .article-content h2 {
+    font-size: 2rem;
+    letter-spacing: -0.1rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

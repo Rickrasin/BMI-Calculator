@@ -1,0 +1,43 @@
+@use '../1-base/variables'
+@use '../1-base/base-mixins'
+@use 'layouts-mixins'
+
+.bmi-limitations
+    padding-bottom: 7.5rem
+    @include base-mixins.tablet
+        padding-bottom: 5.99rem
+
+    &-content
+        @include layouts-mixins.center-content
+        flex-direction: column
+    
+        display: grid
+        grid-template-areas: "container container container . gender gender" ". . age age muscle muscle" ". pregnancy pregnancy race race ."
+        gap: 2rem
+        @include base-mixins.tablet
+            grid-template-areas: "container container container container" "gender gender age age" "muscle muscle pregnancy pregnancy"   ". race race ."
+
+        .container
+            padding-bottom: 3rem
+            grid-column-start: 1
+            grid-column-end: 6
+            grid-area: container
+            @include base-mixins.tablet
+                text-align: center
+
+        #card
+
+            &-4
+                grid-area: gender
+
+            &-5
+                grid-area: age
+
+            &-6
+                grid-area: muscle
+
+            &-7
+                grid-area: pregnancy
+
+            &-8
+                grid-area: race

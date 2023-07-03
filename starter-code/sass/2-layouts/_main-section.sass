@@ -1,43 +1,66 @@
 @use '../1-base/variables'
+@use '../1-base/base-mixins'
 @use 'layouts-mixins'
 
 .main-container
-    padding: 167px 0 86px 0
+    margin-top: 11.31rem
+    margin-bottom: 4.06rem
+    @include base-mixins.tablet
+        margin-top: 2rem 
+        margin-bottom: 6rem 
 
     .rectangle
         position: absolute
-        width: 978px
-        height: 737px
+        width: 61rem
+        height: 46rem
         left: 24px
         top: -1px
         background: linear-gradient(290.1deg, #D6E6FE 0%, rgba(214, 252, 254, 0) 100%)
         border-radius: 0px 0px 35px 35px
         z-index: -10
+        @include base-mixins.tablet
+            width: 100%
+            height: 40rem
+            left: 0
+            top: 0
 
     &-content
         @include layouts-mixins.center-content
         display: grid
         grid-template-columns: 1fr 1fr
-        gap: 32px
+        gap: 2rem
+        @include base-mixins.tablet
+            grid-template-columns: 1fr
+            gap: 2.5rem
+            align-content: center
 
         .logo
             position: absolute
             top: 0
             margin-top: 75px
+            @include base-mixins.tablet
+                position: relative
+                margin-left: auto
+                margin-right: auto
+                margin-top: 0
 
         &-left
             padding-right: 88px
             display: flex
             flex-direction: column
             justify-content: center
+            gap: 1.5rem
+            @include base-mixins.tablet
+                padding-right: 0
+                text-align: center
+                align-items: center
 
             h1
                 font-size: variables.$heading-XL
                 font-weight: 800
                 font-style: italic
                 line-height: 110%
-                margin-bottom: 35px
-                letter-spacing: -3.2px
+                letter-spacing: -0.15rem
 
             p
                 font-size: variables.$body-M
@@ -47,13 +70,9 @@
         &-right
             .container
 
-                display: flex
-                flex-direction: column
-                align-items: flex-start
-                padding: 32px
+                @include layouts-mixins.padding-center
                 gap: 32px
 
-                width: 564px
                 background-color: #fff
                 box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25)
                 border-radius: 16px

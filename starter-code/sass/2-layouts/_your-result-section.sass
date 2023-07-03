@@ -1,36 +1,26 @@
 @use '../1-base/variables'
+@use '../1-base/base-mixins'
 @use 'layouts-mixins'
 
 .your-result
     @include layouts-mixins.center-content
+    margin-top: 8.19rem
+    margin-bottom: 6rem
     display: grid
     grid-template-columns: 1fr 1fr
     align-content: center
-    gap: 131px
-    padding-top: 65px
-    padding-bottom: 96px 
+    gap: 8.19rem
 
-    
+    @include base-mixins.tablet
+        gap: 4.69rem
 
     .man-eating
-        height: 533px
         img
-            height: 100%
+            width: 100%
+            @include base-mixins.tablet
 
     &-content
-        display: flex
-        flex-direction: column
-        gap: 35px
-        justify-content: end
-        align-items: flex-start
         padding: 40px 0
-
-        h2
-            color: variables.$gunmetal
-            font-size: 48px
-            font-weight: 600
-            line-height: 110%
-            letter-spacing: -2.4px
-
-        p
-            line-height: 150%
+        @include base-mixins.tablet
+            text-align: start !important
+            padding: 0

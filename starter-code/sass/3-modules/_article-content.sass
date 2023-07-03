@@ -1,0 +1,21 @@
+@use '../1-base/base-mixins'
+
+.article-content
+    display: flex
+    flex-direction: column
+    gap: 35px
+    justify-content: end
+    align-items: flex-start
+    @include base-mixins.tablet
+        gap: 2rem
+        text-align: center
+        align-items: center
+
+    h2
+        font-size: 48px
+        font-weight: 600
+        line-height: 110%
+        letter-spacing: -2.4px
+        @include base-mixins.tablet
+            font-size: 2rem
+            letter-spacing: -0.1rem

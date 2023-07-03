@@ -1,10 +1,16 @@
 @use '../1-base/variables'
+@use '../1-base/base-mixins'
+@use '../2-layouts/layouts-mixins'
 
 .card
     display: flex
     flex-direction: column
     align-items: flex-start
     gap: 45px
+    @include base-mixins.tablet
+        flex-direction: row
+        gap: 2.5rem
+        align-items: center
 
     &-icon
         width: 64px
@@ -22,5 +28,25 @@
             font-weight: 600
             letter-spacing: -1.2px
 
-        p
-            line-height: 150%
+    &-secondary
+        @include layouts-mixins.padding-center
+        flex-direction: column
+        gap: 16px
+
+        border-radius: 16px
+        box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25)
+
+        &-top
+            display: flex
+            gap: 1rem
+            align-items: center
+
+            img
+                width: 2rem
+                height: 2rem
+
+            h3
+                color: variables.$gunmetal
+                font-size: variables.$heading-M
+                font-weight: 600
+                letter-spacing: -1.2px

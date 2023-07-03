@@ -1,3 +1,9 @@
+@use '../1-base/base-mixins'
+
+
+
+
+
 .pattern-left
     display: block
     position: absolute
@@ -5,3 +11,5 @@
     height: 200px
     left: 1188px
     top: 749px
+    @include base-mixins.tablet
+        display: none

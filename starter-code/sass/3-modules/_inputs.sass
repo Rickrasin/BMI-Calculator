@@ -18,6 +18,9 @@
         cursor: pointer
         transition: all 0.3s
 
+        &:hover
+            border: 2px solid variables.$blue
+
     input[type=checkbox]:checked
         background-color: variables.$borders
 
@@ -32,6 +35,9 @@
             position: relative
             background-color: variables.$blue
 
+            &:hover
+                border: transparent
+
     label
         color: variables.$gunmetal
         font-size: variables.$body-M
@@ -44,6 +50,11 @@
     border: 1px solid #D8E2E7
     padding: 24px 20px
     border-radius: 12px
+    transition: all 0.2s
+
+    &:hover
+        border: 1px solid variables.$blue
+        cursor: pointer
 
     input[type=number]
 
