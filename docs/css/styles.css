@@ -63,6 +63,11 @@ p {
     top: 0;
   }
 }
+@media (max-width: 576px) {
+  .main-container .rectangle {
+    border-radius: 0rem 0rem 2.1875rem 2.1875rem;
+  }
+}
 .main-container-content {
   max-width: 1160px;
   margin: 0 auto;
