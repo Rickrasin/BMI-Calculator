@@ -6,8 +6,8 @@
     margin-top: 11.31rem
     margin-bottom: 4.06rem
     @include base-mixins.tablet
-        margin-top: 2rem 
-        margin-bottom: 6rem 
+        margin-top: 2rem
+        margin-bottom: 6rem
 
     .rectangle
         position: absolute
@@ -18,6 +18,7 @@
         background: linear-gradient(290.1deg, #D6E6FE 0%, rgba(214, 252, 254, 0) 100%)
         border-radius: 0px 0px 35px 35px
         z-index: -10
+
         @include base-mixins.tablet
             width: 100%
             height: 40rem
@@ -61,6 +62,10 @@
                 font-style: italic
                 line-height: 110%
                 letter-spacing: -0.15rem
+                @include base-mixins.tablet
+                    font-size: variables.$heading-L
+                    font-weight: 600
+                    font-style: normal
 
             p
                 font-size: variables.$body-M
@@ -72,10 +77,11 @@
 
                 @include layouts-mixins.padding-center
                 gap: 32px
-
                 background-color: #fff
                 box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25)
                 border-radius: 16px
+                @include base-mixins.mobile
+                    padding: 1.5rem
 
             h3
                 color: variables.$gunmetal
@@ -94,12 +100,24 @@
                 .input-container
                     display: grid
                     grid-template-columns: 1fr 1fr
-                    gap: 8px 24px
+                    gap: 1rem 24px
+                    @include base-mixins.mobile
+                        grid-template-columns: 1fr
+                        grid-template-rows: 1fr 1fr
+
+                    .input-group
+                        display: flex
+                        flex-direction: column
+                        gap: 0.5rem
+                        align-items: flex-start
 
                     label
                         color: variables.$dark-eletric-blue
                         font-size: variables.$body-M
                         line-height: 150%
+                        @include base-mixins.mobile
+                            .input-group
+                                grid-row-start: 2
 
             .result
                 display: flex
@@ -110,11 +128,16 @@
                 background-color: variables.$blue
                 border-radius: 80px 999px 999px 80px
                 background: linear-gradient(90deg, #345FF6 0%, #587DFF 100%)
+                @include base-mixins.mobile
+                    padding: 2rem
+                    border-radius: 1rem
 
                 &-content
                     display: grid
                     grid-template-columns: 1fr 1fr
                     gap: 24px
+                    @include base-mixins.mobile
+                        grid-template-columns: 1fr
 
                     &-left
                         display: flex

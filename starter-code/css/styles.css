@@ -77,6 +77,11 @@ p {
     max-width: 42.8rem;
   }
 }
+@media (max-width: 375px) {
+  .main-container-content {
+    max-width: 20.5rem;
+  }
+}
 @media (max-width: 968px) {
   .main-container-content {
     grid-template-columns: 1fr;
@@ -118,6 +123,13 @@ p {
   line-height: 110%;
   letter-spacing: -0.15rem;
 }
+@media (max-width: 968px) {
+  .main-container-content-left h1 {
+    font-size: 48px;
+    font-weight: 600;
+    font-style: normal;
+  }
+}
 .main-container-content-left p {
   font-size: 1rem;
   font-weight: 400;
@@ -132,6 +144,11 @@ p {
   background-color: #fff;
   box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25);
   border-radius: 16px;
+}
+@media (max-width: 375px) {
+  .main-container-content-right .container {
+    padding: 1.5rem;
+  }
 }
 .main-container-content-right h3 {
   color: #253347;
@@ -150,12 +167,29 @@ p {
 .main-container-content-right form .input-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px 24px;
+  gap: 1rem 24px;
+}
+@media (max-width: 375px) {
+  .main-container-content-right form .input-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+.main-container-content-right form .input-container .input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
 }
 .main-container-content-right form .input-container label {
   color: #5e6e85;
   font-size: 1rem;
   line-height: 150%;
+}
+@media (max-width: 375px) {
+  .main-container-content-right form .input-container label .input-group {
+    grid-row-start: 2;
+  }
 }
 .main-container-content-right .result {
   display: flex;
@@ -167,10 +201,21 @@ p {
   border-radius: 80px 999px 999px 80px;
   background: linear-gradient(90deg, #345FF6 0%, #587DFF 100%);
 }
+@media (max-width: 375px) {
+  .main-container-content-right .result {
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+}
 .main-container-content-right .result-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
+}
+@media (max-width: 375px) {
+  .main-container-content-right .result-content {
+    grid-template-columns: 1fr;
+  }
 }
 .main-container-content-right .result-content-left {
   display: flex;
@@ -222,6 +267,16 @@ p {
     max-width: 42.8rem;
   }
 }
+@media (max-width: 375px) {
+  .your-result {
+    max-width: 20.5rem;
+  }
+}
+@media (max-width: 375px) {
+  .your-result {
+    grid-template-columns: 1fr;
+  }
+}
 @media (max-width: 968px) {
   .your-result {
     gap: 4.69rem;
@@ -244,23 +299,15 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 7.5rem;
+  background: linear-gradient(290.1deg, rgba(214, 230, 254, 0.25) 0%, rgba(214, 252, 254, 0) 100%);
+  border-radius: 2.1875rem;
+  margin: 0 1.5rem 7.5rem 1.5rem;
 }
 @media (max-width: 968px) {
   .tips {
-    margin-bottom: 6rem;
+    margin: 0 0 6rem 0;
+    border-radius: 0;
   }
-}
-.tips .rectangle {
-  position: absolute;
-  background: linear-gradient(290.1deg, #D6E6FE 0%, rgba(214, 252, 254, 0) 100%);
-  opacity: 0.25;
-  z-index: -10;
-  width: 100%;
-  height: 100%;
-  relative: 100%;
-  left: 0px;
-  top: 1424.09px;
 }
 .tips-content {
   max-width: 1160px;
@@ -275,6 +322,11 @@ p {
 @media (max-width: 968px) {
   .tips-content {
     max-width: 42.8rem;
+  }
+}
+@media (max-width: 375px) {
+  .tips-content {
+    max-width: 20.5rem;
   }
 }
 @media (max-width: 968px) {
@@ -307,9 +359,20 @@ p {
     max-width: 42.8rem;
   }
 }
+@media (max-width: 375px) {
+  .bmi-limitations-content {
+    max-width: 20.5rem;
+  }
+}
 @media (max-width: 968px) {
   .bmi-limitations-content {
     grid-template-areas: "container container container container" "gender gender age age" "muscle muscle pregnancy pregnancy" ". race race .";
+  }
+}
+@media (max-width: 375px) {
+  .bmi-limitations-content {
+    gap: 1rem;
+    grid-template-areas: "container" "gender" "age" "muscle" "pregnancy" "race";
   }
 }
 .bmi-limitations-content .container {
@@ -321,6 +384,11 @@ p {
 @media (max-width: 968px) {
   .bmi-limitations-content .container {
     text-align: center;
+  }
+}
+@media (max-width: 375px) {
+  .bmi-limitations-content .container {
+    padding-bottom: 2.5;
   }
 }
 .bmi-limitations-content #card-4 {
@@ -431,6 +499,12 @@ p {
     flex-direction: row;
     gap: 2.5rem;
     align-items: center;
+  }
+}
+@media (max-width: 375px) {
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 .card-icon {

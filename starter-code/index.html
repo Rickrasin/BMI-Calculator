@@ -24,7 +24,7 @@
       rel="stylesheet"
     />
   </head>
-  
+
   <body>
     <img
       src="./assets/images/pattern-curved-line-left.svg"
@@ -62,9 +62,8 @@
               </div>
 
               <div class="input-container">
-                <label for="height">Height</label>
-                <label for="weight">Weight</label>
                 <div class="input-group">
+                  <label for="height">Height</label>
                   <div class="input">
                     <input
                       type="number"
@@ -76,6 +75,7 @@
                   </div>
                 </div>
                 <div class="input-group">
+                  <label for="weight">Weight</label>
                   <div class="input">
                     <input
                       type="number"
@@ -93,12 +93,12 @@
                 <div class="result-content-left">
                   <h2>Your BMI is...</h2>
 
-                  <h1>23.4<!-- add score --></h1>
+                  <h1 id="score">23.4<!-- add score --></h1>
                 </div>
 
                 <p>
-                  Your BMI suggests you're a healthy weight. Your ideal weight
-                  is between <span>63.3kg - 85.2kgs<!-- add range --></span>.
+                  Your BMI suggests you're a <span id="typeWeight">healthy weight</span>. Your ideal weight
+                  is between <span id="idealWeight">63.3kg - 85.2kgs<!-- add range --></span>.
                 </p>
               </div>
             </div>
@@ -126,7 +126,6 @@
     </section>
 
     <section class="tips">
-      <div class="rectangle"></div>
       <div class="tips-content">
         <div class="card" id="1">
           <img
@@ -260,5 +259,7 @@
         </div>
       </div>
     </section>
+
+    <script type="text/javascript" src="index.js"></script>
   </body>
 </html>

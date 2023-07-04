@@ -6,20 +6,12 @@
     display: flex
     justify-content: center
     align-items: center
-    margin-bottom: 7.5rem
+    background: linear-gradient(290.1deg, rgba(214,230,254, 25% ) 0%, rgba(214, 252, 254, 0) 100%)
+    border-radius: 2.1875rem
+    margin: 0 1.5rem 7.5rem 1.5rem
     @include base-mixins.tablet
-        margin-bottom: 6rem
-
-    .rectangle
-        position: absolute
-        background: linear-gradient(290.1deg, #D6E6FE 0%, rgba(214, 252, 254, 0) 100%)
-        opacity: 0.25
-        z-index: -10
-        width: 100%
-        height: 100%
-        relative: 100%
-        left: 0px
-        top: 1424.09px
+        margin: 0 0 6rem 0
+        border-radius: 0
 
     &-content
         @include layouts-mixins.center-content
@@ -30,3 +22,4 @@
         @include base-mixins.tablet
             flex-direction: column
             gap: 2.5rem
+            

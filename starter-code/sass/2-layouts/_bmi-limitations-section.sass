@@ -10,12 +10,16 @@
     &-content
         @include layouts-mixins.center-content
         flex-direction: column
+        
     
         display: grid
         grid-template-areas: "container container container . gender gender" ". . age age muscle muscle" ". pregnancy pregnancy race race ."
         gap: 2rem
         @include base-mixins.tablet
             grid-template-areas: "container container container container" "gender gender age age" "muscle muscle pregnancy pregnancy"   ". race race ."
+        @include base-mixins.mobile
+            gap: 1rem
+            grid-template-areas: "container" "gender" "age" "muscle" "pregnancy" "race"
 
         .container
             padding-bottom: 3rem
@@ -24,6 +28,8 @@
             grid-area: container
             @include base-mixins.tablet
                 text-align: center
+            @include base-mixins.mobile
+                padding-bottom: 2.5
 
         #card
 
