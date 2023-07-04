@@ -3,20 +3,19 @@
 @use 'layouts-mixins'
 
 .bmi-limitations
-    padding-bottom: 7.5rem
+    margin-bottom: 7.5rem
     @include base-mixins.tablet
-        padding-bottom: 5.99rem
+        margin-bottom: 5.99rem
 
     &-content
         @include layouts-mixins.center-content
         flex-direction: column
-        
-    
+
         display: grid
         grid-template-areas: "container container container . gender gender" ". . age age muscle muscle" ". pregnancy pregnancy race race ."
         gap: 2rem
         @include base-mixins.tablet
-            grid-template-areas: "container container container container" "gender gender age age" "muscle muscle pregnancy pregnancy"   ". race race ."
+            grid-template-areas: "container container container container" "gender gender age age" "muscle muscle pregnancy pregnancy" ". race race ."
         @include base-mixins.mobile
             gap: 1rem
             grid-template-areas: "container" "gender" "age" "muscle" "pregnancy" "race"
