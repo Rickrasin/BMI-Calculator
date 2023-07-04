@@ -166,6 +166,7 @@ p {
 }
 .main-container-content-right form .input-container {
   display: grid;
+  flex-direction: column;
   grid-template-columns: 1fr 1fr;
   gap: 1rem 24px;
 }
@@ -175,21 +176,51 @@ p {
     grid-template-rows: 1fr 1fr;
   }
 }
-.main-container-content-right form .input-container .input-group {
+.main-container-content-right form .input-container div {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   align-items: flex-start;
+}
+.main-container-content-right form .input-container div div {
+  display: flex;
+  flex-direction: row;
 }
 .main-container-content-right form .input-container label {
   color: #5e6e85;
   font-size: 1rem;
   line-height: 150%;
 }
+.main-container-content-right form .input-container-imperial {
+  display: grid;
+  flex-direction: column;
+  grid-template-columns: 1fr;
+  gap: 1rem 24px;
+}
 @media (max-width: 375px) {
-  .main-container-content-right form .input-container label .input-group {
-    grid-row-start: 2;
+  .main-container-content-right form .input-container-imperial {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
   }
+}
+.main-container-content-right form .input-container-imperial div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+.main-container-content-right form .input-container-imperial div div {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+.main-container-content-right form .input-container-imperial label {
+  color: #5e6e85;
+  font-size: 1rem;
+  line-height: 150%;
+}
+.main-container-content-right form .hidden {
+  display: none;
 }
 .main-container-content-right .result {
   display: flex;
@@ -210,6 +241,7 @@ p {
 .main-container-content-right .result-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: center;
   gap: 24px;
 }
 @media (max-width: 375px) {
@@ -240,13 +272,16 @@ p {
   line-height: 110%;
   letter-spacing: -3.2px;
 }
+.main-container-content-right .result .hidden {
+  display: none;
+}
 .main-container-content-right p {
   color: #fff;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 400;
   line-height: 150%;
 }
-.main-container-content-right p span {
+.main-container-content-right p span:last-child {
   font-weight: 700;
 }
 
