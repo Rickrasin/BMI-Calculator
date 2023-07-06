@@ -280,6 +280,9 @@ p {
 .main-container-content-right .result .hidden {
   display: none;
 }
+.main-container-content-right .hidden {
+  display: none;
+}
 .main-container-content-right p {
   color: #fff;
   font-size: 0.875rem;

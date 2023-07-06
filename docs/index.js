@@ -1,65 +1,72 @@
-//Check Box
-const checkboxMetric = document.getElementById("checkMetric");
-const checkboxImperial = document.getElementById("checkImperial");
-const formMetric = document.getElementById("metric");
-const formImperial = document.getElementById("imperial");
+// Calculate IMC Metric
 
-checkboxMetric.onclick = function () {
-  if (checkboxMetric.checked) {
-    checkboxImperial.checked = false;
-    formMetric.classList.remove("hidden");
-    formImperial.classList.add("hidden");
-  } else {
-    checkboxMetric.checked = true;
-  }
-};
+//Imperial
 
-checkboxImperial.onclick = function () {
-  if (checkboxImperial.checked) {
-    checkboxMetric.checked = false;
-    formImperial.classList.remove("hidden");
-    formMetric.classList.add("hidden");
-  } else {
-    checkboxImperial.checked = true;
-  }
-};
+//Altura
+const foot = document.getElementById("foot");
+const inch = document.getElementById("inch");
+//Peso
+const stone = document.getElementById("stone");
+const pound = document.getElementById("pound");
 
-// Calculate BMI Metric
+//Meters
 const height = document.getElementById("height");
 const weight = document.getElementById("weight");
 
+//Welcome and Result
 const welcome = document.getElementById("welcome");
 const result = document.getElementById("result");
 
+//Result Values
 const score = document.getElementById("score");
 const idealWeight = document.getElementById("idealWeight");
 const typeWeight = document.getElementById("typeWeight");
 
-let BMI = 0;
+let IMC = 0;
 
-function BMICalculate() {
-  BMI = calcBMI(height.value, weight.value);
-  let idealWeightText = GetIdealWeight(height.value);
-  let classWeightText = GetClassWeight(weight.value);
+function IMCCalculate() {
+  IMC = calcIMC(height.value, weight.value);
+  let idealWeightText = GetIdealWeight(height.value, false);
+  let typeWeightText = GetClassWeight(IMC);
 
+  console.log("result Meter");
+  ShowResult(idealWeightText, typeWeightText, IMC);
+}
+
+function IMCImperialCalculate() {
+  let HeightM = ConvertHeight(foot.value, inch.value);
+  let weightKg = ConvertWeight(stone.value, pound.value);
+
+  console.log(HeightM);
+  console.log(weightKg);
+
+  IMC = calcIMC(HeightM, weightKg);
+
+  let idealWeightText = GetIdealWeight(HeightM, true);
+  let typeWeightText = GetClassWeight(IMC);
+
+  console.log("result");
+  ShowResult(idealWeightText, typeWeightText, IMC);
+}
+
+//Show Result
+
+function ShowResult(idealWeightText, typeWeightText, IMC) {
   idealWeight.innerHTML = idealWeightText;
-  typeWeight.innerHTML = classWeightText;
-  score.innerHTML = BMI;
+  typeWeight.innerHTML = typeWeightText;
+  score.innerHTML = IMC.toFixed(1);
 
-  console.log(
-    typeof BMI && idealWeightText != undefined && classWeightText != undefined
-  );
-  if (BMI > 0) {
+  if (IMC > 0 && idealWeightText != null && typeWeightText != null) {
     console.log("Liberado");
     result.classList.remove("hidden");
     welcome.classList.add("hidden");
   }
 }
 
-function calcBMI(height, weight) {
-  let calcBMI = weight / ((height / 100) * (height / 100));
-  let result = Math.round(calcBMI * 10) / 10;
-  console.log(result);
+//CALC IMC
+function calcIMC(height, weight) {
+  let calcIMC = weight / ((height / 100) * (height / 100));
+  let result = Math.round(calcIMC * 10) / 10;
 
   if (result >= 0) {
     return result;
@@ -68,57 +75,67 @@ function calcBMI(height, weight) {
   }
 }
 
-function GetClassWeight(weight) {
-  let text;
-  if (BMI < 18.5) {
-    text = "underweight";
-  } else if (BMI <= 24.9) {
-    text = "healthy weight";
-  } else if (BMI <= 29.9) {
-    text = "overweight";
-  } else if (BMI <= 34.9) {
-    text = "class I obese";
-  } else if (BMI <= 39.9) {
-    text = "class II obese";
-  } else if (BMI >= 40) {
-    text = "class III obese";
-  }
+//Convert Imperial Values
+function ConvertHeight(heightFt, heightIn) {
+  return heightFt * 30.48 + heightIn * 2.54;
+}
 
+function ConvertWeight(weightSt, weightLb) {
+  return weightSt * 6.35029 + weightLb * 0.453592;
+}
+
+//Check WeightType and WeightRange
+function GetClassWeight(IMC) {
+  let text;
+  switch (true) {
+    case IMC <= 18.5:
+      text = "underweight";
+      break;
+    case IMC >= 18.6 && IMC <= 24.9:
+      text = "Healthy Weight";
+      break;
+    case IMC >= 23.0 && IMC <= 29.9:
+      text = "Overweight";
+      break;
+    case IMC >= 30:
+      text = "Obese";
+      break;
+  }
   return text;
 }
 
-function GetIdealWeight(height) {
-  // Ideal Height
-  let idealWeightText;
-  switch (true) {
-    case height >= 150 && height <= 154:
-      idealWeightText = "41.6kgs - 56kgs";
-      break;
-    case height >= 155 && height <= 159:
-      idealWeightText = "44.4kgs - 60kgs";
-      break;
-    case height >= 160 && height <= 164:
-      idealWeightText = "47.3kgs - 63.7kgs";
-      break;
-    case height >= 165 && height <= 169:
-      idealWeightText = "50.3kgs - 67.8kgs";
-      break;
-    case height >= 170 && height <= 174:
-      idealWeightText = "53.5kgs - 71.9kgs";
-      break;
-    case height >= 175 && height <= 179:
-      idealWeightText = "56.65kgs - 76.25kgs";
-      break;
-    case height >= 180 && height <= 184:
-      idealWeightText = "60kgs - 80kgs";
-      break;
-    case height >= 185 && height <= 189:
-      idealWeightText = "63.3kgs - 85kgs";
-      break;
-    case height >= 190 && height <= 194:
-      idealWeightText = "70.3kgs - 95kgs";
-      break;
+function GetIdealWeight(height, isImperial) {
+  let idealWeightRange;
+  let height2 = (height / 100) * (height / 100);
+  let min;
+  let max;
+
+  min = 18.6 * height2;
+  max = 24.9 * height2;
+
+  if (!isImperial) {
+    min = Math.round(min * 100) / 100;
+    max = Math.round(max * 100) / 100;
+    idealWeightRange = `${min.toFixed(1)}kgs - ${max.toFixed(1)}kgs`;
+  } else {
+    const minSt = Math.floor(min / 6.35029);
+    const minLbs = Math.round(((min / 6.35029) % 1) * 14);
+
+    const maxSt = Math.floor(max / 6.35029);
+    const maxLbs = Math.round(((max / 6.35029) % 1) * 14);
+
+    console.log();
+
+    idealWeightRange = `${minSt.toFixed(0)}st ${minLbs.toFixed(
+      0
+    )}lbs - ${maxSt.toFixed(0)}st ${maxLbs.toFixed(0)}lbs`;
+
+    console.log(minSt + "minSt ");
+    console.log("minLbs " + maxLbs);
+    console.log("maxSt " + maxSt);
+    console.log("maxLbs " + maxLbs);
   }
 
-  return idealWeightText;
+  console.log(idealWeightRange);
+  return idealWeightRange;
 }

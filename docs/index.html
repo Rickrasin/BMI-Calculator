@@ -76,7 +76,7 @@
                       id="height"
                       value="0"
                       placeholder="0"
-                      onkeyup="BMICalculate()"
+                      onkeyup="IMCCalculate()"
                     />
                     <span>cm</span>
                   </div>
@@ -91,7 +91,7 @@
                       id="weight"
                       placeholder="0"
                       value="0"
-                      onkeyup="BMICalculate()"
+                      onkeyup="IMCCalculate()"
                     />
 
                     <span>kg</span>
@@ -101,7 +101,7 @@
 
               <div class="input-container-imperial hidden" id="imperial">
                 <div class="input-group">
-                  <label for="weight">Weight</label>
+                  <label for="weight">Height</label>
                   <!-- Imperial -->
                   <div class="input-group-imperial">
                     <div class="input">
@@ -111,6 +111,7 @@
                         id="foot"
                         placeholder="0"
                         value="0"
+                        onkeyup="IMCImperialCalculate()"
                       />
                       <span>ft</span>
                     </div>
@@ -121,13 +122,14 @@
                         id="inch"
                         value="0"
                         placeholder="0"
+                        onkeyup="IMCImperialCalculate()"
                       />
                       <span>in</span>
                     </div>
                   </div>
                 </div>
                 <div class="input-group">
-                  <label for="weight">Height</label>
+                  <label for="weight">Weight</label>
                   <!-- Imperial -->
                   <div class="input-group-imperial">
                     <div class="input">
@@ -137,6 +139,7 @@
                         id="stone"
                         value="0"
                         placeholder="0"
+                        onkeyup="IMCImperialCalculate()"
                       />
                       <span>st</span>
                     </div>
@@ -147,6 +150,7 @@
                         id="pound"
                         value="0"
                         placeholder="0"
+                        onkeyup="IMCImperialCalculate()"
                       />
                       <span>lbs</span>
                     </div>
@@ -340,5 +344,6 @@
     </section>
 
     <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="checkbox.js"></script>
   </body>
 </html>
