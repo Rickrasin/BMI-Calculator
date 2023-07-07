@@ -1,6 +1,6 @@
 // Calculate IMC Metric
 
-//Imperial
+//Imputs
 
 //Altura
 const foot = document.getElementById("foot");
@@ -13,6 +13,8 @@ const pound = document.getElementById("pound");
 const height = document.getElementById("height");
 const weight = document.getElementById("weight");
 
+const inputs = document.querySelectorAll("input");
+
 //Welcome and Result
 const welcome = document.getElementById("welcome");
 const result = document.getElementById("result");
@@ -23,6 +25,14 @@ const idealWeight = document.getElementById("idealWeight");
 const typeWeight = document.getElementById("typeWeight");
 
 let IMC = 0;
+
+//Selecionar Texto
+Array.from(inputs).forEach(function (input) {
+  input.addEventListener("click", function () {
+    this.select();
+  });
+});
+
 
 function IMCCalculate() {
   IMC = calcIMC(height.value, weight.value);
